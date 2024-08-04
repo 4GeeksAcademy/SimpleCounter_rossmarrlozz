@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Clock } from "./clock.jsx";
+import '../../styles/index.css';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
+
+	const [temporizador, setTemporizador] = useState(0)
+
+	useEffect(() => {
+		setTimeout(() => {
+			setTemporizador(value => value + 1)
+		}, 1000)
+	}, [temporizador])
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className ="text-center">
+			<contador className="formato">
+				<Clock number={<p className="fa fa-clock"></p>} />
+				<Clock number={Math.floor(temporizador / 100000) % 10} />
+				<Clock number={Math.floor(temporizador / 10000) % 10} />
+				<Clock number={Math.floor(temporizador / 1000) % 10} />
+				<Clock number={Math.floor(temporizador / 100) % 10} />
+				<Clock number={Math.floor(temporizador / 10) % 10} />
+				<Clock number={Math.floor(temporizador % 10)} />
+			</contador>
 		</div>
 	);
 };

@@ -1,12 +1,22 @@
 
-/* 
+.formato{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 75%;
+    padding: 5rem;
+    margin-top: 30px;
+    gap: 100px;
+}
 
-    You can write your own styles here...
+.estiloo {
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+    color: whitesmoke;
+    font-size: 50px;
+   border: 1px solid white;
+   border-radius: 10px;
+   padding: 20px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+  }
